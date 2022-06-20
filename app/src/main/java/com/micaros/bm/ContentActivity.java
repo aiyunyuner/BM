@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
@@ -78,12 +79,12 @@ public class ContentActivity extends AppCompatActivity {
                         finish();
                         break;
                     case R.id.jieyue:
-                        //跳转到个人借书的页面
-//                        Intent intent = new Intent(contentActivity.this, person_borrow.class);
-//                        startActivity(intent);
+//                        跳转到个人借书的页面
+                        Intent intent = new Intent(ContentActivity.this, BorrowInfoActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.updateInfo:
-                        //跳转到个人借书的页面
+                        //跳转到修改个人信息页面
                         Intent intent3 = new Intent(ContentActivity.this, ReaderInfo.class);
                         startActivity(intent3);
                         break;
@@ -123,6 +124,20 @@ public class ContentActivity extends AppCompatActivity {
                         listView.setAdapter(simpleAdapter);
                     }
                 });
+            }
+        });
+
+        listView = (ListView) findViewById(R.id.list_view);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int i = position + 1;
+                setTitle("点击" + i + "的item");
+                Intent intent = new Intent(ContentActivity.this, BookInfoActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("id", position);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
     }

@@ -16,6 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".BookInfoActivity"
+            android:exported="false"
+            android:label="@string/title_activity_book_info"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".ReaderInfo"
             android:exported="false" />
         <activity
@@ -26,6 +31,9 @@
             android:exported="false" />
         <activity
             android:name=".ContentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BorrowInfoActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
