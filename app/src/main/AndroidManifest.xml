@@ -18,8 +18,7 @@
         <activity
             android:name=".BookInfoActivity"
             android:exported="false"
-            android:label="@string/title_activity_book_info"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".ReaderInfo"
             android:exported="false" />
