@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -45,7 +46,7 @@ public class ContentActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ListView listView;
     private long mExitTime;
-
+    private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,8 +119,8 @@ public class ContentActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         System.out.println(list.get(0));
-                        String from[] = {"img", "bookName", "bookWriter"};
-                        int to[] = {R.id.book_image, R.id.book_name, R.id.book_author};
+                        String from[] = {"id","img", "bookName", "bookWriter"};
+                        int to[] = {R.id.id,R.id.book_image, R.id.book_name, R.id.book_author};
                         SimpleAdapter simpleAdapter = new SimpleAdapter(getApplication(), list, R.layout.book_item, from, to);
                         listView.setAdapter(simpleAdapter);
                     }
@@ -133,9 +134,19 @@ public class ContentActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int i = position + 1;
                 setTitle("点击" + i + "的item");
+
+                textView = view.findViewById(R.id.id);
+                CharSequence viewText = textView.getText();
+                String string = viewText.toString();
+//                System.out.println(string);
+                double parseDouble = Double.parseDouble(string);
+                int parseId = (int)parseDouble;
+                System.out.println("准备传给BooInfo的id值:"+parseId); //转换为int类型的id
+
+
                 Intent intent = new Intent(ContentActivity.this, BookInfoActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putInt("id", position);
+                bundle.putInt("id", parseId);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
