@@ -16,6 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".admin.AdminContentActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".BookInfoActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
