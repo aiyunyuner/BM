@@ -133,7 +133,7 @@ public class ContentActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int i = position + 1;
-                setTitle("点击" + i + "的item");
+//                setTitle("点击" + i + "的item");
 
                 textView = view.findViewById(R.id.id);
                 CharSequence viewText = textView.getText();

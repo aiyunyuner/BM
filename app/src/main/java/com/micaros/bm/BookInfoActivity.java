@@ -31,6 +31,14 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 
+/*
+*
+*    点击书籍后跳转的详情页面
+*    显示书籍信息  借阅按钮以及收藏按钮
+*
+* */
+
+
 public class BookInfoActivity extends AppCompatActivity {
 
     private TextView bid,bname,bauthor,bprice;
@@ -98,6 +106,9 @@ public class BookInfoActivity extends AppCompatActivity {
         });
 
 
+
+        //借阅按钮
+
         borrow_bt = findViewById(R.id.borroe_bt);
         borrow_bt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,7 +148,7 @@ public class BookInfoActivity extends AppCompatActivity {
 
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
-                        System.out.println("there");
+//                        System.out.println("there");
                         String string = response.body().string();
 
 //                        JSON.parseObject(string,Bor)
@@ -148,10 +159,10 @@ public class BookInfoActivity extends AppCompatActivity {
                         public void run() {
                             if (integer > 0)
                             {
-                                Toast.makeText(BookInfoActivity.this, "收藏成功！", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(BookInfoActivity.this, "借阅成功！", Toast.LENGTH_SHORT).show();
                             }
                             else{
-                                Toast.makeText(BookInfoActivity.this, "收藏失败!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(BookInfoActivity.this, "借阅失败!", Toast.LENGTH_SHORT).show();
                             }
 
                         }
@@ -166,9 +177,21 @@ public class BookInfoActivity extends AppCompatActivity {
                 values.put("Borname",username);
                 values.put("nowtime",str);
 //
-//                获取当前用户
-                Toast.makeText(BookInfoActivity.this,"收藏成功",Toast.LENGTH_LONG).show();
+
+                Toast.makeText(BookInfoActivity.this,"借阅成功",Toast.LENGTH_LONG).show();
 //
+            }
+        });
+
+
+        //收藏按钮
+        collect_bt = findViewById(R.id.collect_bt);
+        collect_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
             }
         });
 
