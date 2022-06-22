@@ -110,7 +110,7 @@
         android:gravity="center"
         android:text="管理员登录"
         android:textColor="#37302F"
-        android:textSize="15sp" />
+        android:textSize="15sp"/>
 
 
 </LinearLayout>
