@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.micaros.bm.BorrowInfoActivity">
+    tools:context="com.micaros.bm.CollectActivity">
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -47,12 +47,12 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:layout_gravity="center_vertical"
-            android:text="借阅日期"
+            android:text="收藏日期"
             />
 
     </LinearLayout>
     <ListView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/show_borrow"></ListView>
+        android:id="@+id/show_collect"></ListView>
 </LinearLayout>

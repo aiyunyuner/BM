@@ -67,14 +67,14 @@ public class ContentActivity extends AppCompatActivity {
             actionBar.setHomeAsUpIndicator(R.mipmap.ic_menu);
         }
 //        侧滑菜单栏的选项
-        navigationView.setCheckedItem(R.id.shoucang);//设置菜单项的默认选项
+//        navigationView.setCheckedItem(R.id.shoucang);//设置菜单项的默认选项
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.shoucang:
-//                        Intent intent2 = new Intent(contentActivity.this, collectActivity.class);
-//                        startActivity(intent2);
+                        Intent intent1 = new Intent(ContentActivity.this, CollectActivity.class);
+                        startActivity(intent1);
                         break;
                     case R.id.exit:
                         finish();

@@ -190,7 +190,62 @@ public class BookInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                SharedPreferences perf=getSharedPreferences("data",MODE_PRIVATE);
+                 String datetime=perf.getString("time","");//获得当前系统时间
+                String username=perf.getString("uid","");//获得当前用户名称
+                System.out.println(username);
+                String strbid=bid.getText().toString(); //获取图书编号
+                System.out.println(strbid);
+                String strbname=bname.getText().toString(); //获取图书名称
+                System.out.println(strbname);
+                String strbauthor=bauthor.getText().toString();//获取书籍作者
+                System.out.println(strbauthor);
+                System.out.println(str);
+                int intbid=Integer.parseInt(strbid);
 
+                RequestBody requestBody = new FormBody.Builder()
+                        .add("BorName", username)
+                        .add("BookId", strbid)
+                        .add("BookName", strbname)
+                        .add("BookAuthor", strbauthor)
+                        .add("NowTime",str).build();
+
+                HttpPostRequest.okhttpPost(HttpUtils.address + "/collect/add", requestBody, new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(BookInfoActivity.this, "post请求失败", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        System.out.println("--------------------------------------------------");
+                        String string = response.body().string();
+                        System.out.println(string);
+                        System.out.println("--------------------------------------------------");
+                        Integer integer = JSON.parseObject(string, Integer.class);
+                        System.out.println(integer);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if(integer >0)
+                                {
+                                    Toast.makeText(BookInfoActivity.this,"收藏成功",Toast.LENGTH_LONG).show();
+                                }
+                                else
+                                {
+                                    Toast.makeText(BookInfoActivity.this,"收藏失败",Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+
+
+                    }
+                });
 
             }
         });

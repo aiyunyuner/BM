@@ -18,7 +18,6 @@
         <activity
             android:name=".admin.AdminContentActivity"
             android:exported="false" />
-
         <activity
             android:name=".BookInfoActivity"
             android:exported="false"
@@ -37,6 +36,9 @@
             android:exported="false" />
         <activity
             android:name=".BorrowInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CollectActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
