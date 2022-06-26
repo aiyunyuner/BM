@@ -50,7 +50,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         r_birthday = findViewById(R.id.r_birthday);
         r_phone = findViewById(R.id.r_phone);
         r_register = findViewById(R.id.r_register);
-
         r_register.setOnClickListener(this);
 
 
@@ -73,12 +72,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     //获取输入信息
     private void getData()
     {
-        name = r_name.getText().toString().trim();
-        password = r_password.getText().toString().trim();
-        username = user_name.getText().toString().trim();
-        sex = r_sex.getText().toString().trim();
-        birthday = r_birthday.getText().toString().trim();
-        phone = r_phone.getText().toString().trim();
+        name = r_name.getText().toString();
+        password = r_password.getText().toString();
+        username = user_name.getText().toString();
+        sex = r_sex.getText().toString();
+        birthday = r_birthday.getText().toString();
+        phone = r_phone.getText().toString();
     }
 
     @Override
@@ -92,19 +91,19 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     Toast.makeText(RegisterActivity.this,"请输入用户名",Toast.LENGTH_SHORT).show();
                 }else if (TextUtils.isEmpty(password))
                 {
-                    Toast.makeText(RegisterActivity.this,"请输入用户名",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,"请输入密码",Toast.LENGTH_SHORT).show();
                 }else if (TextUtils.isEmpty(username))
                 {
-                    Toast.makeText(RegisterActivity.this,"请输入用户名",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,"请输入姓名",Toast.LENGTH_SHORT).show();
                 }else if (TextUtils.isEmpty(sex))
                 {
-                    Toast.makeText(RegisterActivity.this,"请输入用户名",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,"请输入性别",Toast.LENGTH_SHORT).show();
                 }else if (TextUtils.isEmpty(birthday))
                 {
-                    Toast.makeText(RegisterActivity.this,"请输入用户名",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,"请输入生日",Toast.LENGTH_SHORT).show();
                 }else if (TextUtils.isEmpty(phone))
                 {
-                    Toast.makeText(RegisterActivity.this,"请输入用户名",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,"请输入手机号",Toast.LENGTH_SHORT).show();
                 }else
                 {
 
