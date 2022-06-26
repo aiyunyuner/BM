@@ -7,7 +7,7 @@
     android:background="@drawable/bg4"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.example.administrator.bookmanager.admin.AdminActivity">
+    tools:context="com.micaros.bm.AdminActivity">
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -31,11 +31,11 @@
             android:text="用户名：" />
 
         <EditText
-            android:id="@+id/a_name"
+            android:id="@+id/aid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:text="190811010"
+            android:text="admin"
             android:inputType="textPersonName" />
     </LinearLayout>
 
@@ -53,13 +53,14 @@
             app:srcCompat="@mipmap/pwd1" />
 
         <EditText
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:layout_alignTop="@+id/imageview2"
             android:layout_alignLeft="@+id/a_name"
             android:layout_alignStart="@+id/a_name"
-            android:text="贾婷婷"/>
+            android:text="管理员"/>
     </LinearLayout>
 
     <LinearLayout
@@ -77,7 +78,7 @@
             app:srcCompat="@mipmap/pwd1" />
 
         <EditText
-            android:id="@+id/a_password"
+            android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -85,7 +86,7 @@
             android:layout_alignTop="@+id/imageview2"
             android:layout_alignLeft="@+id/a_name"
             android:layout_alignStart="@+id/a_name"
-            android:text="123456"/>
+            android:text="admin"/>
     </LinearLayout>
 
     <LinearLayout
@@ -95,7 +96,7 @@
         android:padding="20dp"
         android:gravity="center">
         <Button
-            android:id="@+id/a_register"
+            android:id="@+id/a_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -104,7 +105,8 @@
             android:layout_marginTop="20dp"
             android:background="#D1EEEE"
             android:textColor="#37302F"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:onClick="adminLogin"/>
         <Button
             android:id="@+id/a_back"
             android:layout_width="wrap_content"
@@ -114,7 +116,8 @@
             android:layout_marginTop="20dp"
             android:background="#D1EEEE"
             android:textColor="#37302F"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:onClick="adminBack"/>
     </LinearLayout>
 
 </LinearLayout>

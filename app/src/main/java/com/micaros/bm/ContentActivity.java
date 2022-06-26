@@ -7,8 +7,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -44,7 +46,7 @@ public class ContentActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ListView listView;
     private long mExitTime;
-
+    private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,25 +67,25 @@ public class ContentActivity extends AppCompatActivity {
             actionBar.setHomeAsUpIndicator(R.mipmap.ic_menu);
         }
 //        侧滑菜单栏的选项
-        navigationView.setCheckedItem(R.id.shoucang);//设置菜单项的默认选项
+//        navigationView.setCheckedItem(R.id.shoucang);//设置菜单项的默认选项
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.shoucang:
-//                        Intent intent2 = new Intent(contentActivity.this, collectActivity.class);
-//                        startActivity(intent2);
+                        Intent intent1 = new Intent(ContentActivity.this, CollectActivity.class);
+                        startActivity(intent1);
                         break;
                     case R.id.exit:
                         finish();
                         break;
                     case R.id.jieyue:
-                        //跳转到个人借书的页面
-//                        Intent intent = new Intent(contentActivity.this, person_borrow.class);
-//                        startActivity(intent);
+//                        跳转到个人借书的页面
+                        Intent intent = new Intent(ContentActivity.this, BorrowInfoActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.updateInfo:
-                        //跳转到个人借书的页面
+                        //跳转到修改个人信息页面
                         Intent intent3 = new Intent(ContentActivity.this, ReaderInfo.class);
                         startActivity(intent3);
                         break;
@@ -117,12 +119,36 @@ public class ContentActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         System.out.println(list.get(0));
-                        String from[] = {"img", "bookName", "bookWriter"};
-                        int to[] = {R.id.book_image, R.id.book_name, R.id.book_author};
+                        String from[] = {"id","img", "bookName", "bookWriter"};
+                        int to[] = {R.id.id,R.id.book_image, R.id.book_name, R.id.book_author};
                         SimpleAdapter simpleAdapter = new SimpleAdapter(getApplication(), list, R.layout.book_item, from, to);
                         listView.setAdapter(simpleAdapter);
                     }
                 });
+            }
+        });
+
+        listView = (ListView) findViewById(R.id.list_view);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int i = position + 1;
+//                setTitle("点击" + i + "的item");
+
+                textView = view.findViewById(R.id.id);
+                CharSequence viewText = textView.getText();
+                String string = viewText.toString();
+//                System.out.println(string);
+                double parseDouble = Double.parseDouble(string);
+                int parseId = (int)parseDouble;
+                System.out.println("准备传给BooInfo的id值:"+parseId); //转换为int类型的id
+
+
+                Intent intent = new Intent(ContentActivity.this, BookInfoActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("id", parseId);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
     }

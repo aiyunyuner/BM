@@ -22,7 +22,7 @@ public class Admin_select_message extends AppCompatActivity {
         back_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Admin_select_message.this, Admin_content.class);
+                Intent intent = new Intent(Admin_select_message.this, admin_content_activity.class);
                 startActivity(intent);
             }
 

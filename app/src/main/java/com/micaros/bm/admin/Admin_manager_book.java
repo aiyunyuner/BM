@@ -25,7 +25,7 @@ public class Admin_manager_book extends AppCompatActivity {
             back_bt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(Admin_manager_book.this,Admin_content.class);
+                    Intent intent=new Intent(Admin_manager_book.this,admin_content_activity.class);
                         startActivity(intent);
                 }
             });
