@@ -15,6 +15,62 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
+
+        <activity
+            android:name=".admin.Admin_update_reader"
+            android:exported="false" />
+
+        <activity
+            android:name=".admin.Admin_delete_reader"
+            android:exported="false" />
+
+        <activity
+            android:name=".admin.Admin_editer_reader"
+            android:exported="false" />
+
+        <activity
+            android:name=".admin.Admin_search_bookinfo"
+            android:exported="false" />
+
+        <activity
+            android:name=".admin.Admin_add_reader"
+            android:exported="false" />
+
+        <activity
+            android:name=".admin.Select_reader_admin"
+            android:exported="false" />
+
+        <activity
+            android:name=".admin.Admin_search_book"
+            android:exported="false" />
+
+        <activity
+            android:name=".admin.Admin_add_book"
+            android:exported="false" />
+
+        <activity
+            android:name=".admin.Admin_pay_info"
+            android:exported="false" />
+
+        <activity
+            android:name=".admin.admin_borrow_info"
+            android:exported="false" />
+
+        <activity
+            android:name=".admin.admin_select_bookinfo"
+            android:exported="false" />
+
+        <activity
+            android:name=".admin.Admin_manager_reader"
+            android:exported="false" />
+        <activity
+            android:name=".admin.Admin_manager_book"
+            android:exported="false" />
+        <activity
+            android:name=".admin.Admin_select_message"
+            android:exported="false" />
         <activity
             android:name=".admin.admin_content_activity"
             android:exported="false" />
