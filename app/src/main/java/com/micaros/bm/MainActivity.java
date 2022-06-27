@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         init();//界面初始化
     }
 
+
+
+
     private void init() {
         user_ed = (EditText) findViewById(R.id.name);
         pwd_ed = (EditText) findViewById(R.id.password);
