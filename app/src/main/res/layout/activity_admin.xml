@@ -31,11 +31,11 @@
             android:text="用户名：" />
 
         <EditText
-            android:id="@+id/aid"
+            android:id="@+id/a_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:text="admin"
+            android:text="190811010"
             android:inputType="textPersonName" />
     </LinearLayout>
 
@@ -86,7 +86,7 @@
             android:layout_alignTop="@+id/imageview2"
             android:layout_alignLeft="@+id/a_name"
             android:layout_alignStart="@+id/a_name"
-            android:text="admin"/>
+            android:text="123456"/>
     </LinearLayout>
 
     <LinearLayout
@@ -105,8 +105,7 @@
             android:layout_marginTop="20dp"
             android:background="#D1EEEE"
             android:textColor="#37302F"
-            android:textSize="15sp"
-            android:onClick="adminLogin"/>
+            android:textSize="15sp"/>
         <Button
             android:id="@+id/a_back"
             android:layout_width="wrap_content"
@@ -116,8 +115,7 @@
             android:layout_marginTop="20dp"
             android:background="#D1EEEE"
             android:textColor="#37302F"
-            android:textSize="15sp"
-            android:onClick="adminBack"/>
+            android:textSize="15sp"/>
     </LinearLayout>
 
 </LinearLayout>
